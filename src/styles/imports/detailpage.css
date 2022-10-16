@@ -1,0 +1,43 @@
+.capitalize {
+  text-transform: capitalize;
+}
+
+.card-container {
+  background-image: url(../../images/pokemon-card-front.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 240px;
+  height: 348px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.pokemon-img {
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  top: 40px;
+  left: 60px;
+}
+
+.stats-container {
+  position: absolute;
+  top: 185px;
+  left: -10px;
+}
+
+.stats-container li {
+  list-style-type: none;
+  text-transform: capitalize;
+}
+
+.favorites-btn {
+  border: none;
+  background-color: var(--clr-darkblue);
+  color: var(--clr-yellow);
+  padding: 10px 25px;
+  max-width: 200px;
+  display: block;
+  margin: 10px auto;
+  cursor: pointer;
+}

@@ -1,0 +1,75 @@
+h1 {
+  text-align: center;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.search-filter {
+  display: block;
+  width: 240px;
+  padding: 10px;
+  margin: 3rem auto;
+  border: 2px solid var(--clr-darkblue);
+  color: var(--clr-darkblue);
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+.search-filter:focus {
+  background-color: var(--clr-yellow);
+  outline: none;
+}
+
+.pokemon-ol {
+  padding: 0;
+  margin: 0;
+  list-style-position: inside;
+  font-size: 27px;
+  color: var(--clr-yellow);
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.favorites-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pokemon-list {
+  width: 240px;
+  height: 348px;
+  background-image: url(../../images/pokemon-card-back.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-align: center;
+  line-height: 100px;
+  text-shadow: var(--font-pokemon);
+  text-transform: capitalize;
+  position: relative;
+}
+
+.pokemon-link {
+  font-size: 30px;
+  color: var(--clr-yellow);
+  position: absolute;
+  padding-top: 200px;
+  width: 100%;
+  left: 0;
+  bottom: 15px;
+}
+
+.pokemon-link:hover {
+  color: var(--clr-yellow);
+  text-shadow: none;
+  font-weight: bold;
+  z-index: 1;
+}

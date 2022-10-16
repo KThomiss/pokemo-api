@@ -1,0 +1,59 @@
+form {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 2px;
+  margin-top: 10px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 2px;
+  border: 2px solid var(--clr-darkblue);
+}
+
+.form-btn {
+  border: 1px solid black;
+  background: var(--clr-bg-button);
+  border-radius: 50%;
+  color: white;
+
+  font-size: 20px;
+  padding-bottom: 55px;
+
+  height: 100px;
+  width: 100px;
+  margin: 10px auto;
+  display: block;
+  line-height: -100px;
+
+  position: relative;
+  cursor: pointer;
+}
+
+.form-btn::before {
+  content: "";
+  background-color: black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 35px;
+  right: 33px;
+}
+.form-btn::after {
+  content: "";
+  background-color: #dbdada;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 40.5px;
+  right: 38.5px;
+}

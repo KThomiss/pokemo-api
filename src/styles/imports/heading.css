@@ -1,0 +1,29 @@
+nav {
+  background-color: var(--clr-darkblue);
+}
+
+.header-ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.header-li {
+  padding: 10px;
+  list-style-type: none;
+}
+
+.header-li a {
+  padding: 10px;
+  color: var(--clr-yellow);
+}
+
+.header-li > *:hover {
+  background-color: var(--clr-lightblue);
+}
+
+.active {
+  font-weight: bold;
+  background-color: var(--clr-lightblue);
+}
