@@ -28,6 +28,7 @@ function LoginForm() {
     resolver: yupResolver(schema),
   });
 
+  // eslint-disable-next-line
   const [auth, setAuth] = useContext(AuthContext);
 
   async function onSubmit(data) {
