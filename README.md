@@ -20,11 +20,7 @@ This website is using the public pokemon API: [PokéAPI](https://pokeapi.co/)
 
 ### Installing
 
-This is where you list how to get the project started. It typically just includes telling a person to clone the repo and then to install the dependencies e.g.
-
 1. Clone the repo:
-
-git@github.com:KThomiss/pokemo-api.git
 
 ```bash
 git clone git@github.com:KThomiss/pokemo-api.git
