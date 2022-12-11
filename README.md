@@ -2,7 +2,7 @@
 
 ![image](pokemon-api-favorites.jpg)
 
-Create a website using an API of you choice combined with a login functionality using Wordpress JWT plugin.
+Create a website using an API of your choice combined with a login functionality using Wordpress JWT plugin.
 
 ## Description
 This website is using the public pokemon API: [PokéAPI](https://pokeapi.co/)
