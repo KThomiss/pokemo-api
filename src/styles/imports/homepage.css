@@ -7,6 +7,10 @@ h1 {
   margin: 0 auto;
 }
 
+.pokemon-list-container {
+  margin-bottom: 6rem;
+}
+
 .search-filter {
   display: block;
   width: 240px;
@@ -27,10 +31,7 @@ h1 {
 .pokemon-ol {
   padding: 0;
   margin: 0;
-  list-style-position: inside;
-  font-size: 27px;
-  color: var(--clr-yellow);
-
+  list-style-type: none;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -45,31 +46,48 @@ h1 {
 }
 
 .pokemon-list {
-  width: 240px;
-  height: 348px;
-  background-image: url(../../images/pokemon-card-back.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  text-align: center;
-  line-height: 100px;
-  text-shadow: var(--font-pokemon);
-  text-transform: capitalize;
-  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightblue;
+}
+
+.list-img {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  aspect-ratio: 1 / 1;
 }
 
 .pokemon-link {
-  font-size: 30px;
-  color: var(--clr-yellow);
-  position: absolute;
-  padding-top: 200px;
+  color: black;
   width: 100%;
-  left: 0;
-  bottom: 15px;
+  height: 100%;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 .pokemon-link:hover {
   color: var(--clr-yellow);
   text-shadow: none;
   font-weight: bold;
-  z-index: 1;
+}
+
+.region-selection {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.region-btn {
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 15px 0;
+  border: none;
+  background-color: var(--clr-darkblue);
+  color: white;
+  cursor: pointer;
 }
