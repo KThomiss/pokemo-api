@@ -7,7 +7,7 @@ function Layout() {
           <NavLink end to="/">
             Home
           </NavLink>
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/pokedex">Pokèdex</NavLink>
           <NavLink to="/favorites">Favorites</NavLink>
           <NavLink to="/login">Login</NavLink>
         </li>

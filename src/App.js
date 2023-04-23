@@ -1,6 +1,6 @@
 import HomePage from "./components/home/HomePage";
 import DetailPage from "./components/detail/DetailPage";
-import ContactPage from "./components/contact/ContactPage";
+import PokedexPage from "./components/pokedex/PokdedexPage";
 import FavoritesPage from "./components/favorites/FavoritesPage";
 import LoginPage from "./components/login/LoginPage";
 import AdminPage from "./components/admin/AdminPage";
@@ -16,8 +16,8 @@ function App() {
         <Layout></Layout>
         <Routes>
           <Route path="/" exact element={<HomePage />}></Route>
+          <Route path="/pokedex" element={<PokedexPage />}></Route>
           <Route path="/detail/:name" element={<DetailPage />}></Route>
-          <Route path="/contact" element={<ContactPage />}></Route>
           <Route path="/favorites" element={<FavoritesPage />}></Route>
           <Route path="/login" element={<LoginPage />}></Route>
           <Route path="/admin" element={<AdminPage />}></Route>

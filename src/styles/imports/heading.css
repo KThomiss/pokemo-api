@@ -1,12 +1,13 @@
 nav {
-  background-color: var(--clr-darkblue);
+  width: 100%;
 }
 
 .header-ul {
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .header-li {
@@ -16,7 +17,8 @@ nav {
 
 .header-li a {
   padding: 10px;
-  color: var(--clr-yellow);
+  color: white;
+  font-size: 2rem;
 }
 
 .header-li > *:hover {

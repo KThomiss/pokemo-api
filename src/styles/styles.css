@@ -1,6 +1,6 @@
 @import url(./imports/heading.css);
 @import url(./imports/homepage.css);
-@import url(./imports/forms.css);
+@import url(./imports/pokedex.css);
 @import url(./imports/detailpage.css);
 @import url("https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap");
 
@@ -27,9 +27,16 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
-  background-color: whitesmoke;
+  height: 100%;
+  background-image: radial-gradient(circle farthest-corner at 12.3% 19.3%, rgba(85, 88, 218, 1) 0%, rgba(95, 209, 249, 1) 100.2%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -44,21 +51,9 @@ a {
   text-decoration: none;
 }
 
-.form-error {
-  color: red;
-}
-
-.submit-success,
-.message {
-  color: green;
-  text-align: center;
-  display: block;
-  margin-top: 3rem;
-  font-size: 24px;
-}
-
-.message {
-  color: var(--clr-darkblue);
+.error {
+  font-size: 2rem;
+  color: var(--clr-darkred);
 }
 
 .loading {
@@ -91,4 +86,44 @@ a {
   100% {
     transform: rotate(0);
   }
+}
+
+.loading-btn {
+  border: 1px solid black;
+  background: var(--clr-bg-button);
+  border-radius: 50%;
+  color: white;
+
+  font-size: 20px;
+  padding-bottom: 55px;
+
+  height: 100px;
+  width: 100px;
+  margin: 10px auto;
+  display: block;
+  line-height: -100px;
+
+  position: relative;
+  cursor: pointer;
+}
+
+.loading-btn::before {
+  content: "";
+  background-color: black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 35px;
+  right: 33px;
+}
+.loading-btn::after {
+  content: "";
+  background-color: #dbdada;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 40.5px;
+  right: 38.5px;
 }

@@ -1,3 +1,3 @@
 export default function Heading({ title }) {
-  return <h1 className="capitalize">{title}</h1>;
+  return <h1 className="heading">{title}</h1>;
 }

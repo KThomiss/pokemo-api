@@ -1,0 +1,227 @@
+h1 {
+  text-align: center;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pokemon-list-container {
+  margin-bottom: 6rem;
+}
+
+.search-filter {
+  display: block;
+  width: 240px;
+  padding: 10px;
+  margin: 3rem auto;
+  border: 2px solid var(--clr-darkblue);
+  color: var(--clr-darkblue);
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+.search-filter:focus {
+  background-color: var(--clr-yellow);
+  outline: none;
+}
+
+.pokemon-ol {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.favorites-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pokemon-list {
+  width: 200px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.8rem;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 10px 1px var(--clr-darkblue);
+  animation: translate 0.4s forwards;
+  opacity: 0;
+}
+
+@keyframes translate {
+  0% {
+    transform: translateY(60px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.list-img {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+  transform: translateY(0);
+  transition: transform 0.2s ease;
+}
+
+.pokemon-list:hover,
+.medal-btn:hover {
+  background-color: var(--clr-darkblue);
+}
+
+.pokemon-list:hover .list-img {
+  transform: translateY(-5px);
+  transition: transform 0.2s ease;
+}
+
+.pokemon-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+}
+
+.pokemon-link:hover {
+  color: var(--clr-yellow);
+  text-shadow: none;
+}
+
+.region-selection {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.medal-btn {
+  font-size: 1.2rem;
+  width: 100%;
+  padding-top: 6rem;
+  border-radius: 5px;
+  border: 1px solid var(--clr-darkblue);
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.region-selection .active-btn {
+  background-color: var(--clr-darkblue);
+  font-weight: bold;
+}
+
+.alola-medal {
+  background-image: url(/src/images/medals/gold_alola_medal.png);
+}
+
+.galar-medal {
+  background-image: url(/src/images/medals/gold_galar_medal.png);
+}
+
+.hisui-medal {
+  background-image: url(/src/images/medals/gold_hisui_medal.png);
+}
+
+.hoenn-medal {
+  background-image: url(/src/images/medals/gold_hoenn_medal.png);
+}
+
+.johto-medal {
+  background-image: url(/src/images/medals/gold_johto_medal.png);
+}
+
+.kalos-medal {
+  background-image: url(/src/images/medals/gold_kalos_medal.png);
+}
+
+.kanto-medal {
+  background-image: url(/src/images/medals/gold_kanto_medal.png);
+}
+
+.paldea-medal {
+  background-image: url(/src/images/medals/gold_collector_medal.png);
+}
+
+.sinnoh-medal {
+  background-image: url(/src/images/medals/gold_sinnoh_medal.png);
+}
+
+.unova-medal {
+  background-image: url(/src/images/medals/gold_unova_medal.png);
+}
+
+@media (max-width: 1050px) {
+  .region-selection {
+    max-width: 600px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  .medal-btn {
+    width: 100px;
+  }
+}
+
+@media (max-width: 450px) {
+  .medal-btn {
+    padding: 1rem;
+  }
+
+  .alola-medal {
+    background-image: none;
+  }
+
+  .galar-medal {
+    background-image: none;
+  }
+
+  .hisui-medal {
+    background-image: none;
+  }
+
+  .hoenn-medal {
+    background-image: none;
+  }
+
+  .johto-medal {
+    background-image: none;
+  }
+
+  .kalos-medal {
+    background-image: none;
+  }
+
+  .kanto-medal {
+    background-image: none;
+  }
+
+  .paldea-medal {
+    background-image: none;
+  }
+
+  .sinnoh-medal {
+    background-image: none;
+  }
+
+  .unova-medal {
+    background-image: none;
+  }
+}

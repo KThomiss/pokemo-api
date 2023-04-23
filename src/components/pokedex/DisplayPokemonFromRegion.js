@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { UNOVA_URL } from "../../constants/api";
 import LoadingIndicator from "../common/LoadingIndicator";
 import useApi from "../../hooks/useApi";
 
-export default function ListOfPokemon() {
+export default function ListOfPokemon(props) {
   const [searchValue, setSearchValue] = useState("");
-
-  const { loading, error, data, setData, filteredData } = useApi(UNOVA_URL);
-
+  const { loading, error, data, setData, filteredData } = useApi(props.regionUrl);
   useEffect(() => {
     // eslint-disable-next-line
     const searchResults = filteredData.filter(function (filter) {
@@ -26,9 +23,7 @@ export default function ListOfPokemon() {
 
   if (loading) return <LoadingIndicator />;
 
-  if (error) {
-    return <div className="error">{error}</div>;
-  }
+  if (error) return <div className="error">{error}</div>;
 
   return (
     <div className="pokemon-list-container">
@@ -36,9 +31,9 @@ export default function ListOfPokemon() {
       <ol className="pokemon-ol">
         {data.map((list, index) => {
           return (
-            <li key={index} className="pokemon-list">
+            <li key={index} className="pokemon-list" style={{ animationDelay: index * 0.1 + "s" }}>
               <Link to={`/detail/${list.name}`} className="pokemon-link">
-                <img src={require(`../../images/official-artwork/unova/${list.name}.png`)} alt={list.name} className="list-img" />
+                <img src={require(`../../images/official-artwork/${props.regionName}/${list.name}.png`)} alt={list.name} className="list-img" />
                 {list.name}
               </Link>
             </li>

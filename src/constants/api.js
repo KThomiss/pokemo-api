@@ -1,7 +1,8 @@
 export const DETAIL_URL = "https://pokeapi.co/api/v2/pokemon/";
+
 export const WORDPRESS_BASE_URL = "http://localhost:8080/wp-practice/wordpress/";
 export const TOKEN_PATH = "wp-json/jwt-auth/v1/token";
-
+//description and other details = https://pokeapi.co/api/v2/pokemon-species/[pokemon name]/
 //Unknown meltan & melmetal = https://pokeapi.co/api/v2/pokemon?limit=2&offset=807
 
 //Kanto Generation I
