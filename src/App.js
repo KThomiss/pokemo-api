@@ -2,8 +2,6 @@ import HomePage from "./components/home/HomePage";
 import DetailPage from "./components/detail/DetailPage";
 import PokedexPage from "./components/pokedex/PokdedexPage";
 import FavoritesPage from "./components/favorites/FavoritesPage";
-import LoginPage from "./components/login/LoginPage";
-import AdminPage from "./components/admin/AdminPage";
 import Layout from "./components/layout/Layout";
 import { AuthProvider } from "./context/AuthContext";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -19,8 +17,6 @@ function App() {
           <Route path="/pokedex" element={<PokedexPage />}></Route>
           <Route path="/detail/:name" element={<DetailPage />}></Route>
           <Route path="/favorites" element={<FavoritesPage />}></Route>
-          <Route path="/login" element={<LoginPage />}></Route>
-          <Route path="/admin" element={<AdminPage />}></Route>
         </Routes>
       </Router>
     </AuthProvider>

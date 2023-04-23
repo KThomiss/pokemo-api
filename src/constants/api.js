@@ -1,9 +1,5 @@
-export const DETAIL_URL = "https://pokeapi.co/api/v2/pokemon/";
-
-export const WORDPRESS_BASE_URL = "http://localhost:8080/wp-practice/wordpress/";
-export const TOKEN_PATH = "wp-json/jwt-auth/v1/token";
-//description and other details = https://pokeapi.co/api/v2/pokemon-species/[pokemon name]/
-//Unknown meltan & melmetal = https://pokeapi.co/api/v2/pokemon?limit=2&offset=807
+export const DETAIL1_URL = "https://pokeapi.co/api/v2/pokemon/";
+export const DETAIL2_URL = "https://pokeapi.co/api/v2/pokemon-species/";
 
 //Kanto Generation I
 export const KANTO_URL = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0";
@@ -18,7 +14,7 @@ export const UNOVA_URL = "https://pokeapi.co/api/v2/pokemon?limit=156&offset=493
 //Kalos Generation V
 export const KALOS_URL = "https://pokeapi.co/api/v2/pokemon?limit=72&offset=649";
 //Alola Generation VI
-export const ALOLA_URL = "https://pokeapi.co/api/v2/pokemon?limit=86&offset=721";
+export const ALOLA_URL = "https://pokeapi.co/api/v2/pokemon?limit=88&offset=721";
 //Galar Generation VII
 export const GALAR_URL = "https://pokeapi.co/api/v2/pokemon?limit=89&offset=809";
 //Hisui Generation VIII

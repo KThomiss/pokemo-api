@@ -1,7 +1,7 @@
-import DetailPokemon from "../pokedex/DetailPokemon";
+import DisplayDetailsForPokemon from "./DisplayDetailsForPokemon";
 
 function DetailPage() {
-  return <DetailPokemon />;
+  return <DisplayDetailsForPokemon />;
 }
 
 export default DetailPage;

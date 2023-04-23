@@ -9,7 +9,6 @@ function Layout() {
           </NavLink>
           <NavLink to="/pokedex">Pokèdex</NavLink>
           <NavLink to="/favorites">Favorites</NavLink>
-          <NavLink to="/login">Login</NavLink>
         </li>
       </ul>
     </nav>

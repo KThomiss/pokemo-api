@@ -1,7 +1,7 @@
 import Heading from "../layout/Heading";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { DETAIL_URL } from "../../constants/api";
+import { DETAIL1_URL } from "../../constants/api";
 import LoadingIndicator from "../common/LoadingIndicator";
 
 function PokemonDetails() {
@@ -13,7 +13,7 @@ function PokemonDetails() {
 
   let { name } = useParams();
 
-  const url = DETAIL_URL + `${name}`;
+  const url = DETAIL1_URL + `${name}`;
 
   useEffect(
     function () {
@@ -72,43 +72,59 @@ function PokemonDetails() {
 
   return (
     <div className="container">
-      <Heading title={pokename} />
+      <Heading title={pokename.toUpperCase() + " # " + id} />
       <div className="card-container">
-        <img src={img} alt={pokename} className="pokemon-img" />
-        <ul className="stats-container">
-          <li>Pokedex No: {id}</li>
-          <li>
-            Type: {type1} {type2 !== undefined ? `/ ${type2}` : null}
-          </li>
-          <li>
-            {statname1}: {statno1}
-          </li>
-          <li>
-            {statname2}: {statno2}
-          </li>
-          <li>
-            {statname3}: {statno3}
-          </li>
-          <li>
-            {statname4}: {statno4}
-          </li>
-        </ul>
+        <div>
+          <img src={img} alt={pokename} className="pokemon-img" />
+        </div>
+        <div>
+          <span className="type-label">Type:</span>
+          <div className="type-container">
+            <span className={`type ${type1}`}>{type1}</span> <span className={`type ${type2}`}>{type2 !== undefined ? `${type2}` : null}</span>
+          </div>
+          <div>
+            <label htmlFor="hp">
+              {statname1}: {statno1}
+            </label>
+            <progress id="hp" max={300} value={statno1}></progress>
+          </div>
+          <div>
+            <label htmlFor="attack">
+              {statname2}: {statno2}
+            </label>
+            <progress id="attack" max={300} value={statno2}></progress>
+          </div>
+          <div>
+            <label htmlFor="defence">
+              {statname3}: {statno3}
+            </label>
+            <progress id="defence" max={300} value={statno3}></progress>
+          </div>
+          <div>
+            <label htmlFor="special-attack">
+              {statname4}: {statno4}
+            </label>
+            <progress id="special-attack" max={300} value={statno4}></progress>
+          </div>
+          <div>
+            {!checkFav && (
+              <button
+                className="favorites-btn"
+                onClick={() => {
+                  setFav((currentFav) => [...currentFav, { id, type1, type2, pokename, img, statname1, statname2, statname3, statname4, statno1, statno2, statno3, statno4 }]);
+                }}
+              >
+                Add to favorites
+              </button>
+            )}
+            {checkFav && (
+              <button className="favorites-btn" onClick={removeFromFav}>
+                Remove from favorites
+              </button>
+            )}
+          </div>
+        </div>
       </div>
-      {!checkFav && (
-        <button
-          className="favorites-btn"
-          onClick={() => {
-            setFav((currentFav) => [...currentFav, { id, type1, type2, pokename, img, statname1, statname2, statname3, statname4, statno1, statno2, statno3, statno4 }]);
-          }}
-        >
-          Add to favorites
-        </button>
-      )}
-      {checkFav && (
-        <button className="favorites-btn" onClick={removeFromFav}>
-          Remove from favorites
-        </button>
-      )}
     </div>
   );
 }
