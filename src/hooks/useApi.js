@@ -11,7 +11,7 @@ const useApi = (url) => {
       const response = await fetch(url);
       if (response.ok) {
         const json = await response.json();
-        setData(json.results);
+        setData(json);
         setfilteredData(json.results);
       } else {
         setError(`There was an API error`);

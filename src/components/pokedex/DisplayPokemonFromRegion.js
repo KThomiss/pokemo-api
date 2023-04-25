@@ -29,7 +29,7 @@ export default function ListOfPokemon(props) {
     <div className="pokemon-list-container">
       <input value={searchValue} onChange={filterInput} placeholder="Pokemon name" className="search-filter" />
       <ol className="pokemon-ol">
-        {data.map((list, index) => {
+        {data.results.map((list, index) => {
           return (
             <li key={index} className="pokemon-list" style={{ animationDelay: index * 0.1 + "s" }}>
               <Link to={`/detail/${list.name}`} className="pokemon-link">

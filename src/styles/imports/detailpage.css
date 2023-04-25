@@ -4,10 +4,23 @@
 
 .card-container {
   display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 0 20px;
 }
 
 .card-container div {
   flex-grow: 1;
+}
+
+.image-container {
+  max-width: 475px;
+}
+
+.pokemon-img {
+  display: block;
+  width: 100%;
+  object-position: bottom;
 }
 
 label,
@@ -15,6 +28,11 @@ label,
   font-size: 1.2rem;
   margin: 5px 0;
   display: block;
+  text-transform: capitalize;
+}
+
+.highlight {
+  color: var(--clr-yellow);
 }
 
 progress[value="hp"]::-webkit-progress-value {
@@ -33,12 +51,9 @@ progress[value] {
 }
 
 .favorites-btn {
-  background-color: var(--clr-darkblue);
+  background-color: transparent;
   border: none;
-  margin-top: 1rem;
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  color: var(--clr-yellow);
+  cursor: pointer;
 }
 
 .type-container {
