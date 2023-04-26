@@ -10,6 +10,7 @@ import NotFav from "../../images/notFavStar.png";
 function PokemonDetails() {
   const favoritesArray = JSON.parse(localStorage.getItem("favorites"));
   const [fav, setFav] = useState(favoritesArray || []);
+  const [toggle, setToggle] = useState(true);
   let { name } = useParams();
   const url = DETAIL1_URL + `${name}`;
   const { loading, error, data } = useApi(url);
@@ -27,6 +28,7 @@ function PokemonDetails() {
   const type2 = data.types[1] ? data.types[1].type.name : undefined;
   const pokename = data.name;
   const img = data.sprites.other["official-artwork"].front_default;
+  const shiny = data.sprites.other["official-artwork"].front_shiny;
   const stat_hp = data.stats[0].stat.name;
   const stat_attack = data.stats[1].stat.name;
   const stat_defence = data.stats[2].stat.name;
@@ -55,11 +57,13 @@ function PokemonDetails() {
   };
 
   return (
-    <div className="container">
+    <>
       <Heading title={pokename.toUpperCase() + " # " + id} />
       <div className="card-container">
         <div className="image-container">
-          <img src={img} alt={pokename} className="pokemon-img" />
+          <button onClick={() => setToggle(!toggle)}>{!toggle ? "Show default" : "Show shiny"}</button>
+          {toggle && <img src={img} alt={pokename} className="pokemon-img" />}
+          {!toggle && <img src={shiny} alt={pokename} className="pokemon-img" />}
         </div>
         <div className="stats-container">
           <h2>Base Stats:</h2>
@@ -121,9 +125,12 @@ function PokemonDetails() {
               </button>
             )}
           </div>
+          <div>
+            <span className="type-label">View Shiny form:</span>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

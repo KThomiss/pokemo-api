@@ -25,9 +25,6 @@ function GetFavorites() {
   }
   return (
     <>
-      <button className="" onClick={clearFavorites}>
-        Remove all favorites
-      </button>
       <ol className="pokemon-ol">
         {fav.map((fav, index) => {
           return (
@@ -41,6 +38,11 @@ function GetFavorites() {
           );
         })}
       </ol>
+      <div className="clear-favorites-container">
+        <button className="clear-favorites" onClick={clearFavorites}>
+          Remove all favorites
+        </button>
+      </div>
     </>
   );
 }

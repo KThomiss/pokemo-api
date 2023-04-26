@@ -27,10 +27,10 @@ function PokemonDetails() {
   const description = getFlavorText(data.flavor_text_entries);
 
   return (
-    <div className="container">
-      <h2>{description === undefined ? "No description for this pokemon" : "Description:"}</h2>
-      <p>{description}</p>
-    </div>
+    <>
+      <h2 className="description-title">{description === undefined ? "No description for this pokemon" : "Description:"}</h2>
+      <p className="description-text">{description}</p>
+    </>
   );
 }
 

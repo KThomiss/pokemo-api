@@ -72,6 +72,16 @@ progress[value] {
   font-weight: bold;
 }
 
+.description-title {
+  margin-bottom: 0;
+  color: white;
+}
+
+.description-text {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
 .normal {
   background-color: #a8a878;
 }

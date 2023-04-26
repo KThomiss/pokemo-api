@@ -162,6 +162,25 @@ a {
   transform: scale(1.3);
 }
 
+.clear-favorites-container {
+  max-width: 220px;
+  margin: 5rem auto;
+}
+
+.clear-favorites {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--clr-yellow);
+  padding: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.clear-favorites:hover {
+  background-color: #eec520;
+}
+
 /* input[type="range"] {
   -webkit-appearance: none;
   margin-right: 15px;
