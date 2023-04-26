@@ -32,9 +32,7 @@ function GetFavorites() {
         {fav.map((fav, index) => {
           return (
             <li key={fav.id} className="pokemon-list favorites-list" style={{ animationDelay: index * 0.1 + "s" }}>
-              <button onClick={() => removeFromFav(fav.id)} className="removeBtn">
-                Remove
-              </button>
+              <button onClick={() => removeFromFav(fav.id)} className="removeBtn"></button>
               <Link to={`/detail/${fav.pokename}`} className="pokemon-link">
                 <img src={fav.img} className="list-img" alt={fav.pokename} />
                 {fav.pokename}

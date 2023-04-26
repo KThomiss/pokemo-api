@@ -4,8 +4,8 @@ import { useParams } from "react-router-dom";
 import useApi from "../../hooks/useApi";
 import { DETAIL1_URL } from "../../constants/api";
 import LoadingIndicator from "../common/LoadingIndicator";
-import Fav from "../../images/pokeball-Fav.png";
-import NotFav from "../../images/pokeball-notFav.png";
+import Fav from "../../images/favStar.png";
+import NotFav from "../../images/notFavStar.png";
 
 function PokemonDetails() {
   const favoritesArray = JSON.parse(localStorage.getItem("favorites"));
@@ -104,7 +104,7 @@ function PokemonDetails() {
             <span className={`type ${type1}`}>{type1}</span> <span className={`type ${type2}`}>{type2 !== undefined ? `${type2}` : null}</span>
           </div>
           <div>
-            <span className="type-label highlight">{!checkFav ? "Add Pokèmon to favorites" : "Remove Pokèmon from favorites"}</span>
+            <span className="type-label">{!checkFav ? "Add Pokèmon to favorites:" : "Remove Pokèmon from favorites:"}</span>
             {!checkFav && (
               <button
                 className="favorites-btn"
