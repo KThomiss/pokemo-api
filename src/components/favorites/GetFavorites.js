@@ -1,57 +1,48 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import InfoMessage from "../common/InfoMessage";
 
 function GetFavorites() {
-  const [favList, setFavList] = useState([]);
-
-  useEffect(() => {
-    const favList = JSON.parse(localStorage.getItem("favorites"));
-    if (favList) {
-      setFavList(favList);
-    }
-  }, []);
+  const favList = JSON.parse(localStorage.getItem("favorites"));
+  const [fav, setFav] = useState(favList || []);
+  localStorage.setItem("favorites", JSON.stringify(fav));
 
   function clearFavorites() {
     localStorage.removeItem("favorites");
-    setFavList([]);
+    setFav([]);
+  }
+
+  function removeFromFav(id) {
+    setFav((current) =>
+      current.filter((removeFav) => {
+        return removeFav.id !== id;
+      })
+    );
   }
 
   if (favList.length === 0) {
     return <InfoMessage message="No favorites selected" />;
   }
-
   return (
     <>
-      <button className="favorites-btn" onClick={clearFavorites}>
+      <button className="" onClick={clearFavorites}>
         Remove all favorites
       </button>
-      <div className="favorites-container">
-        {favList.map((favorite) => {
+      <ol className="pokemon-ol">
+        {fav.map((fav, index) => {
           return (
-            <div className="card-container" key={favorite.id}>
-              <img src={favorite.img} alt={favorite.name} className="pokemon-img" />
-              <ul className="stats-container">
-                <li>Pokedex No: {favorite.id}</li>
-                <li>
-                  Type: {favorite.type1} {favorite.type2 !== undefined ? `/ ${favorite.type2}` : null}
-                </li>
-                <li>
-                  {favorite.statname1}: {favorite.statno1}
-                </li>
-                <li>
-                  {favorite.statname2}: {favorite.statno2}
-                </li>
-                <li>
-                  {favorite.statname3}: {favorite.statno3}
-                </li>
-                <li>
-                  {favorite.statname4}: {favorite.statno4}
-                </li>
-              </ul>
-            </div>
+            <li key={fav.id} className="pokemon-list favorites-list" style={{ animationDelay: index * 0.1 + "s" }}>
+              <button onClick={() => removeFromFav(fav.id)} className="removeBtn">
+                Remove
+              </button>
+              <Link to={`/detail/${fav.pokename}`} className="pokemon-link">
+                <img src={fav.img} className="list-img" alt={fav.pokename} />
+                {fav.pokename}
+              </Link>
+            </li>
           );
         })}
-      </div>
+      </ol>
     </>
   );
 }

@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import useApi from "../../hooks/useApi";
 import { DETAIL2_URL } from "../../constants/api";
-import LoadingIndicator from "../common/LoadingIndicator";
 
 function PokemonDetails() {
   let { name } = useParams();
@@ -9,14 +8,12 @@ function PokemonDetails() {
   const { loading, error, data } = useApi(url);
 
   if (loading) {
-    return <LoadingIndicator />;
+    return;
   }
 
   if (error) {
-    return <div className="error">ERROR: an error occured</div>;
+    return;
   }
-
-  console.log(data);
 
   function getFlavorText(flavors) {
     let tempDescription = [];
@@ -28,7 +25,7 @@ function PokemonDetails() {
   }
 
   const description = getFlavorText(data.flavor_text_entries);
-  console.log(description);
+
   return (
     <div className="container">
       <h2>{description === undefined ? "No description for this pokemon" : "Description:"}</h2>

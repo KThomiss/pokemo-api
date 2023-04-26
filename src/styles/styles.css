@@ -138,6 +138,19 @@ a {
   right: 38.5px;
 }
 
+.favorites-list {
+  position: relative;
+}
+
+.removeBtn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  z-index: 1;
+  cursor: pointer;
+  padding: 10px;
+}
+
 /* input[type="range"] {
   -webkit-appearance: none;
   margin-right: 15px;

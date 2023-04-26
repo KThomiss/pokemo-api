@@ -109,10 +109,7 @@ function PokemonDetails() {
               <button
                 className="favorites-btn"
                 onClick={() => {
-                  setFav((currentFav) => [
-                    ...currentFav,
-                    { id, type1, type2, pokename, img, stat_hp, stat_attack, stat_defence, stat_special_attak, hp_value, attack_value, defence_value, special_attak_value },
-                  ]);
+                  setFav((currentFav) => [...currentFav, { id, pokename, img }]);
                 }}
               >
                 <img src={NotFav} alt="pokeball" />
