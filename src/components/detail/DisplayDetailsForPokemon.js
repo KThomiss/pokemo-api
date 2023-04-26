@@ -125,9 +125,6 @@ function PokemonDetails() {
               </button>
             )}
           </div>
-          <div>
-            <span className="type-label">View Shiny form:</span>
-          </div>
         </div>
       </div>
     </>
