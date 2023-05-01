@@ -55,6 +55,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 .error {
   font-size: 2rem;
   color: var(--clr-darkred);
@@ -114,7 +118,6 @@ a {
   line-height: -100px;
 
   position: relative;
-  cursor: pointer;
 }
 
 .loading-btn::before {
@@ -146,7 +149,6 @@ a {
   position: absolute;
   top: 10px;
   right: 10px;
-  cursor: pointer;
   background-image: url(../images/removeFav.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -174,7 +176,6 @@ a {
   background-color: var(--clr-yellow);
   padding: 1rem;
   font-size: 1.2rem;
-  cursor: pointer;
 }
 
 .clear-favorites:hover {

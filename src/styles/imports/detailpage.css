@@ -1,32 +1,81 @@
-.stats-container li {
-  list-style-type: none;
+.detail-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.pokemon-profile-container {
+  margin-bottom: 2rem;
 }
 
 .card-container {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  position: relative;
+}
+
+h2 {
+  margin: 0;
+}
+
+.detail-card {
   margin: 0 20px;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0px 0px 10px 1px var(--clr-darkblue);
 }
 
 .card-container div {
-  flex-grow: 1;
+  max-width: 450px;
+}
+
+.favorites-btn {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  padding: 0;
+}
+
+.favorites-btn img {
+  width: 35px;
+  height: 35px;
+}
+
+.toggle-image-btn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.stats-container,
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .image-container {
-  max-width: 475px;
+  text-align: center;
 }
 
 .pokemon-img {
-  display: block;
-  width: 100%;
-  object-position: bottom;
+  width: 350px;
+  height: 350px;
 }
 
 label,
 .type-label {
   font-size: 1.2rem;
-  margin: 5px 0;
   display: block;
   text-transform: capitalize;
 }
@@ -46,19 +95,9 @@ progress[value] {
   color: red;
 }
 
-.favorites-btn {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.favorites-btn img {
-  width: 50px;
-  height: 50px;
-}
-
 .type-container {
   display: flex;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -68,18 +107,51 @@ progress[value] {
   justify-content: center;
   width: 100px;
   height: 35px;
+  border-radius: 10px;
   text-transform: capitalize;
   font-weight: bold;
 }
 
-.description-title {
+.type.undefined {
+  display: none;
+}
+
+.description-title,
+.info-title,
+.profile-title {
   margin-bottom: 0;
   color: white;
 }
 
+.description-title,
+.info-title {
+  margin-top: 10px;
+}
+
 .description-text {
   margin-top: 0;
+  margin-bottom: 0;
   font-size: 1.2rem;
+}
+
+.information-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.information-container div {
+  flex-grow: 1;
+  color: white;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-top: 10px;
+}
+
+.info-span {
+  display: block;
+  font-weight: normal;
 }
 
 .normal {
@@ -154,4 +226,109 @@ progress[value] {
 
 .fairy {
   background-color: #f0b6bc;
+}
+
+.abilities {
+  font-weight: bold;
+  background-color: #333333;
+  padding: 2px 10px;
+}
+
+.normal-text {
+  color: #a8a878;
+}
+
+.fire-text {
+  color: #f08030;
+}
+
+.water-text {
+  color: #6890f0;
+}
+
+.grass-text {
+  color: #78c850;
+}
+
+.electric-text {
+  color: #f8d030;
+}
+
+.ice-text {
+  color: #98d8d8;
+}
+
+.fighting-text {
+  color: #c03028;
+}
+
+.poison-text {
+  color: #a040a0;
+}
+
+.ground-text {
+  color: #e0c068;
+}
+
+.flying-text {
+  color: #a890f0;
+}
+
+.psychic-text {
+  color: #f85888;
+}
+
+.bug-text {
+  color: #a8b820;
+}
+
+.rock-text {
+  color: #b8a038;
+}
+
+.ghost-text {
+  color: #705898;
+}
+
+.dark-text {
+  color: #705848;
+}
+
+.dragon-text {
+  color: #7038f8;
+}
+
+.steel-text {
+  color: #b8b8d0;
+}
+
+.fairy-text {
+  color: #f0b6bc;
+}
+
+@media (max-width: 800px) {
+  .detail-card {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .card-container {
+    grid-auto-flow: row;
+    place-items: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .pokemon-img {
+    width: 250px;
+    height: 250px;
+  }
+
+  h2 {
+    margin-top: 10px;
+  }
+
+  progress[value] {
+    height: 15px;
+  }
 }

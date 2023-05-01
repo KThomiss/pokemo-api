@@ -3,7 +3,7 @@ import DisplayDescriptionForPokemon from "./DisplayDescriptionForPokemon";
 
 function DetailPage() {
   return (
-    <div className="container">
+    <div className="detail-container">
       <DisplayDetailsForPokemon />
       <DisplayDescriptionForPokemon />
     </div>

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 const useApi = (url) => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [details, setDetails] = useState({});
   const [error, setError] = useState(null);
   const [filteredData, setfilteredData] = useState([]);
 
@@ -11,7 +12,8 @@ const useApi = (url) => {
       const response = await fetch(url);
       if (response.ok) {
         const json = await response.json();
-        setData(json);
+        setDetails(json);
+        setData(json.results);
         setfilteredData(json.results);
       } else {
         setError(`There was an API error`);
@@ -28,7 +30,7 @@ const useApi = (url) => {
     // eslint-disable-next-line
   }, []);
 
-  return { loading, data, setData, error, filteredData };
+  return { loading, data, setData, error, filteredData, details };
 };
 
 export default useApi;
